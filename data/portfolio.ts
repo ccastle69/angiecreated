@@ -58,14 +58,6 @@ export const portfolioItems: PortfolioItem[] = [
     featured: false,
   },
   {
-    id: '8',
-    title: 'Upcycled Tin Planters',
-    category: 'garden',
-    imageSrc: '/images/portfolio/tin-planters.jpg',
-    description: 'Old tin cans painted and turned into a windowsill herb planter set.',
-    featured: true,
-  },
-  {
     id: '9',
     title: 'Strawberry Galette',
     category: 'recipe',
