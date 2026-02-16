@@ -13,7 +13,7 @@ export const products: Product[] = [
     displayPrice: '$35',
     category: 'tote',
     images: ['/images/products/tote-bag-1.jpg'],
-    stripePriceId: '', // TODO: Replace with real Stripe Price ID from your dashboard
+    stripePriceId: 'price_1T1VufBSG79lBdhpvx5ExXrv', // TODO: Replace with real Stripe Price ID from your dashboard
     available: true,
     badge: 'Popular',
     notes: 'Minimum order: 4 bags. Lead time: 2 weeks. Price per bag.',
@@ -30,7 +30,7 @@ export const products: Product[] = [
     displayPrice: 'Free consult',
     category: 'custom',
     images: ['/images/products/custom-project.jpg'],
-    stripePriceId: '',
+    stripePriceId: 'price_1T1VxoBSG79lBdhp1sp8Bjc6',
     available: true,
     customForm: true,
     badge: 'New',
@@ -46,7 +46,7 @@ export const products: Product[] = [
     displayPrice: 'From $30',
     category: 'digital',
     images: ['/images/products/workshop.jpg'],
-    stripePriceId: '',
+    stripePriceId: 'price_1T1VwWBSG79lBdhpFERReuKI',
     available: true,
   },
 ]
