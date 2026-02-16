@@ -20,12 +20,11 @@ export default function AboutPage() {
               <h1 className="font-display text-5xl md:text-6xl text-bark mb-6">
                 I&apos;m Angie.
               </h1>
-              {/* TODO: Add your personal intro here */}
               <p className="font-body text-lg text-bark/70 leading-relaxed mb-4">
-                [Add your personal intro here — who you are, where you&apos;re based, what lights you up about making things. This is where people decide if they trust you, so be warm and real!]
+                Hi, I&apos;m Angie — the youngest of three daughters (by exactly 11 minutes, if you ask my twin). Growing up the self-proclaimed &ldquo;son my dad never had,&rdquo; I spent more weekends than I&apos;d like to admit learning to fix, build, and renovate things alongside my parents. My mom is Korean, my dad is Swedish, and both of them have been flipping and fixing homes for over 20 years. That DIY-or-die attitude was basically in my blood — even if it took me a while to appreciate it.
               </p>
               <p className="font-body text-lg text-bark/70 leading-relaxed">
-                [A second paragraph about your creative philosophy — the budget-friendly, nothing-goes-to-waste angle that makes your content special.]
+                After college, something clicked. All those reluctant Saturday projects turned into actual passion. I started gardening, cooking from scratch, upcycling things other people threw away — and realized I genuinely loved making things with my hands. What started as a creative outlet has slowly, unexpectedly, become the main thing.
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
@@ -45,11 +44,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeader title="My Story" className="mb-6" />
-              {/* TODO: Fill in your story */}
               <div className="space-y-4 font-body text-bark/70 leading-relaxed">
-                <p>[Your origin story — how you got into DIY and upcycling. What was the first project that got you hooked?]</p>
-                <p>[What drives you — the sustainability angle, the joy of making something from nothing, the budget-friendly philosophy. Why does this matter to you?]</p>
-                <p>[What you make and who you make it for — your community, your followers, the kinds of people who come to your workshops.]</p>
+                <p>Growing up first-gen American with a Korean mom and a Swedish dad means I inherited two very different versions of the same philosophy: don&apos;t waste anything, and make it yourself. My parents have been buying, renovating, and selling homes my whole life — so I grew up knowing which end of a hammer to hold before I knew how to drive.</p>
+                <p>I didn&apos;t always love it. There were plenty of weekends I would have rather been anywhere else. But somewhere along the way, the skills stuck — and so did the mindset. The idea that you don&apos;t need to buy something new when you can make something better. That a little creativity and some elbow grease can turn almost anything into something worth keeping.</p>
+                <p>These days I channel all of that into DIY projects, recipes, gardening, and custom pieces I make for people who want something handmade and personal. I started sharing it online almost by accident, and the community that&apos;s grown around it has been the best surprise. If you&apos;re here, you&apos;re probably my kind of person.</p>
               </div>
             </div>
             {/* TODO: Replace with a photo of your workspace or a project */}
@@ -88,9 +86,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { number: '109K+', label: 'Instagram followers' },
-              { number: '100+', label: 'Projects shared' },
-              { number: '[X]', label: 'Workshops hosted' }, // TODO: Update
-              { number: '[X]', label: 'Custom orders made' }, // TODO: Update
+              { number: '20+', label: 'Years of DIY (reluctant & willing)' },
+              { number: '2 🇰🇷🇸🇪', label: 'Countries in my DNA' },
+              { number: '∞', label: 'Projects that started as trash' },
             ].map(({ number, label }) => (
               <div key={label} className="bg-warm-white rounded-2xl p-6 border border-sand">
                 <div className="font-display text-4xl text-terracotta mb-2">{number}</div>
@@ -101,11 +99,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Brands / Press */}
+      {/* Brands / Press — uncomment and add logos once partnerships are established
       <section className="py-16 bg-sand/30 border-y border-sand">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader title="Brands I've Worked With" centered className="mb-10" />
-          {/* TODO: Add brand logos here as partnerships come in */}
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
             {[...Array(6)].map((_, i) => (
               <div
@@ -116,11 +113,9 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <p className="text-center font-body text-xs text-bark/40 mt-4">
-            [Replace placeholder boxes with brand logos]
-          </p>
         </div>
       </section>
+      */}
 
       {/* CTA */}
       <section className="py-16">
