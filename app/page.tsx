@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { products } from '@/data/products'
 import { workshops } from '@/data/workshops'
+import { portfolioItems } from '@/data/portfolio'
 import ProductCard from '@/components/ProductCard'
 import { SectionHeader } from '@/components/ui/Badge'
 
@@ -182,23 +183,25 @@ export default function HomePage() {
               See more →
             </Link>
           </div>
-          {/* TODO: Replace placeholder grid with real portfolio photos */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {[
-              { label: 'Wine bottle upcycle', gradient: 'from-terracotta/20 to-sand', emoji: '🍷' },
-              { label: 'Bachelorette totes', gradient: 'from-sage/20 to-cream', emoji: '🧺' },
-              { label: 'Garden raised bed', gradient: 'from-sage/30 to-sage/10', emoji: '🌱' },
-              { label: 'Roast chicken recipe', gradient: 'from-sand to-terracotta/10', emoji: '🍋' },
-              { label: 'Macramé hanging', gradient: 'from-cream to-sand', emoji: '🪢' },
-              { label: 'Tin planters', gradient: 'from-terracotta/10 to-sage/20', emoji: '🪴' },
-            ].map(({ label, gradient, emoji }, i) => (
-              <div
-                key={i}
-                className={`aspect-square rounded-xl bg-gradient-to-br ${gradient} flex flex-col items-center justify-center opacity-60`}
+            {portfolioItems.slice(0, 8).map((item) => (
+              <Link
+                key={item.id}
+                href="/portfolio"
+                className="relative aspect-square rounded-xl overflow-hidden group"
               >
-                <span className="text-3xl mb-1" aria-hidden="true">{emoji}</span>
-                <p className="font-body text-xs text-bark/50 text-center px-2">{label}</p>
-              </div>
+                <Image
+                  src={item.imageSrc}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-bark/0 group-hover:bg-bark/40 transition-colors duration-200 flex items-end">
+                  <p className="font-body text-xs text-white font-semibold px-3 py-2 translate-y-full group-hover:translate-y-0 transition-transform duration-200">
+                    {item.title}
+                  </p>
+                </div>
+              </Link>
             ))}
           </div>
           <p className="mt-6 text-center font-body text-sm text-bark/60">
