@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Product } from '@/lib/types'
 import { Badge } from '@/components/ui/Badge'
 
@@ -31,19 +32,26 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="bg-warm-white rounded-2xl overflow-hidden hover-lift border border-sand/60 group">
       {/* Image area */}
-      <div className={`relative aspect-[4/3] bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+      <div className={`relative aspect-[4/3] bg-gradient-to-br ${gradient}`}>
         {product.badge && (
           <div className="absolute top-3 left-3 z-10">
             <Badge variant="terracotta">{product.badge}</Badge>
           </div>
         )}
-        {/* TODO: Replace this div with <Image> once real photos are added to /public/images/products/ */}
-        <div className="text-center p-6 opacity-40">
-          <div className="text-5xl mb-2">
-            {product.category === 'tote' ? '🧺' : product.category === 'custom' ? '💡' : '🛠️'}
+        {product.images[0] ? (
+          <Image
+            src={product.images[0]}
+            alt={product.name}
+            fill
+            className="object-cover"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center opacity-40">
+            <div className="text-5xl">
+              {product.category === 'tote' ? '🧺' : product.category === 'custom' ? '💡' : '🛠️'}
+            </div>
           </div>
-          <p className="font-body text-xs text-bark/60">[Product photo goes here]</p>
-        </div>
+        )}
       </div>
 
       {/* Content */}
