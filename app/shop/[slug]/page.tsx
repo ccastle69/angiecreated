@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { products, getProductBySlug } from '@/data/products'
 import { Badge } from '@/components/ui/Badge'
@@ -38,15 +39,23 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Image */}
-          <div className={`aspect-square rounded-2xl bg-gradient-to-br ${gradient} flex flex-col items-center justify-center border border-sand/60`}>
-            {/* TODO: Replace with <Image src={product.images[0]} ... /> once photos are added */}
-            <div className="text-center p-8 opacity-40">
-              <div className="text-8xl mb-4">
-                {product.category === 'tote' ? '🧺' : '💡'}
+          <div className={`relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br ${gradient} border border-sand/60`}>
+            {product.images[0] ? (
+              <Image
+                src={product.images[0]}
+                alt={product.name}
+                fill
+                className="object-cover"
+                priority
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center opacity-40">
+                <div className="text-8xl mb-4">
+                  {product.category === 'tote' ? '🧺' : '💡'}
+                </div>
+                <p className="font-body text-sm text-bark/60">[Product photo goes here]</p>
               </div>
-              <p className="font-body text-sm text-bark/60">[Product photo goes here]</p>
-              <p className="font-body text-xs text-bark/40 mt-1">Add to /public/images/products/</p>
-            </div>
+            )}
           </div>
 
           {/* Info */}
