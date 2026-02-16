@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { portfolioItems } from '@/data/portfolio'
 import { Badge, SectionHeader } from '@/components/ui/Badge'
@@ -112,15 +113,18 @@ function PortfolioCard({ item }: { item: PortfolioItem }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Image placeholder */}
-      {/* TODO: Replace with <Image src={item.imageSrc} fill className="object-cover" alt={item.title} /> */}
+      {/* Image */}
       <div
-        className={`bg-gradient-to-br ${gradient} flex flex-col items-center justify-center ${
+        className={`relative bg-gradient-to-br ${gradient} ${
           item.featured ? 'aspect-[3/4]' : 'aspect-square'
         }`}
       >
-        <span className="text-4xl opacity-40 mb-2" aria-hidden="true">{categoryEmoji[item.category]}</span>
-        <p className="font-body text-xs text-bark/40 text-center px-4">[Photo: {item.title}]</p>
+        <Image
+          src={item.imageSrc}
+          alt={item.title}
+          fill
+          className="object-cover"
+        />
       </div>
 
       {/* Hover overlay */}
