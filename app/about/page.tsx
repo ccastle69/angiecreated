@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { SectionHeader } from '@/components/ui/Badge'
 
 export const metadata = {
@@ -28,10 +29,14 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="flex justify-center lg:justify-end">
-              {/* TODO: Replace with <Image src="/images/about/angie-hero.jpg" ... /> */}
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-[40%_60%_60%_40%_/_40%_40%_60%_60%] bg-gradient-to-br from-terracotta/20 via-sand to-sage/20 flex flex-col items-center justify-center border-4 border-white shadow-2xl">
-                <span className="text-6xl" aria-hidden="true">🌿</span>
-                <p className="font-body text-xs text-bark/40 mt-3 text-center px-8">[Your photo goes here — /public/images/about/]</p>
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-[40%_60%_60%_40%_/_40%_40%_60%_60%] overflow-hidden border-4 border-white shadow-2xl">
+                <Image
+                  src="/images/about/angie-hero.jpg"
+                  alt="Angie Gibson"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -50,10 +55,13 @@ export default function AboutPage() {
                 <p>These days I channel all of that into DIY projects, recipes, gardening, and custom pieces I make for people who want something handmade and personal. I started sharing it online almost by accident, and the community that&apos;s grown around it has been the best surprise. If you&apos;re here, you&apos;re probably my kind of person.</p>
               </div>
             </div>
-            {/* TODO: Replace with a photo of your workspace or a project */}
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-sage/20 to-sage/5 flex flex-col items-center justify-center border border-sand">
-              <span className="text-5xl opacity-40 mb-2" aria-hidden="true">🛠️</span>
-              <p className="font-body text-xs text-bark/40">[Workshop / workspace photo]</p>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-sand">
+              <Image
+                src="/images/about/workspace.jpg"
+                alt="Angie's workshop and creative workspace"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
