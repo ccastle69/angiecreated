@@ -59,10 +59,10 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: '9',
-    title: 'Strawberry Galette',
+    title: 'Shallot Tatin',
     category: 'recipe',
     imageSrc: '/images/portfolio/galette.jpg',
-    description: 'Rustic strawberry galette with garden-fresh berries.',
+    description: 'Caramelized shallot tatin — savory, rustic, and totally worth it.',
     featured: false,
   },
   {
