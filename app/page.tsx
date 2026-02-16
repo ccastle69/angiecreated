@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { products } from '@/data/products'
 import { workshops } from '@/data/workshops'
 import ProductCard from '@/components/ProductCard'
@@ -46,14 +47,16 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Hero image placeholder */}
+            {/* Hero image */}
             <div className="animate-fade-up-delay-4 flex justify-center lg:justify-end">
-              {/* TODO: Replace with <Image> of Angie or her best project */}
-              <div className="w-80 h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-sand via-terracotta/20 to-sage/20 flex items-center justify-center border-4 border-white shadow-2xl">
-                <div className="text-center p-8 opacity-50">
-                  <div className="text-6xl mb-3">🌿</div>
-                  <p className="font-body text-xs text-bark/60">[Angie&apos;s photo goes here]</p>
-                </div>
+              <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                <Image
+                  src="/images/about/angie-hero.jpg"
+                  alt="Angie Gibson — creator behind Angie Created"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
