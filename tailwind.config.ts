@@ -9,13 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: '#FAF7F2',
-        sand: '#E8DDD0',
-        terracotta: '#C4714A',
-        'terracotta-dark': '#A85A35',
-        sage: '#7A9E7E',
-        'sage-dark': '#5C7D60',
-        bark: '#3D2B1F',
+        cream: '#FFF9F3',
+        sand: '#F0E6D9',
+        coral: '#FF8B6A',
+        'coral-dark': '#E6775A',
+        sage: '#8FAE92',
+        'sage-dark': '#7A9A7E',
+        charcoal: '#3A3735',
         'warm-white': '#FFFDF9',
       },
       fontFamily: {
